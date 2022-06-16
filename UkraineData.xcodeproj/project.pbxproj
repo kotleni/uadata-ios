@@ -12,6 +12,9 @@
 		5AB83D2127EB9F7D00F25250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB83D2027EB9F7D00F25250 /* Assets.xcassets */; };
 		5AB83D2427EB9F7D00F25250 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB83D2327EB9F7D00F25250 /* Preview Assets.xcassets */; };
 		5AB83D2C27EB9FE700F25250 /* UaDataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB83D2B27EB9FE700F25250 /* UaDataAPI.swift */; };
+		5AEFC33E285B2E0500EA22A3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFC33D285B2E0500EA22A3 /* Data.swift */; };
+		5AEFC341285B32FC00EA22A3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AEFC343285B32FC00EA22A3 /* Localizable.strings */; };
+		5AEFC347285B365D00EA22A3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFC346285B365D00EA22A3 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,11 @@
 		5AB83D2027EB9F7D00F25250 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5AB83D2327EB9F7D00F25250 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5AB83D2B27EB9FE700F25250 /* UaDataAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UaDataAPI.swift; sourceTree = "<group>"; };
+		5AEFC33D285B2E0500EA22A3 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		5AEFC342285B32FC00EA22A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5AEFC344285B332300EA22A3 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
+		5AEFC346285B365D00EA22A3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		5AEFC348285B4A8900EA22A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +45,7 @@
 		5AB83D1027EB9F7C00F25250 = {
 			isa = PBXGroup;
 			children = (
+				5AEFC343285B32FC00EA22A3 /* Localizable.strings */,
 				5AB83D1B27EB9F7C00F25250 /* UkraineData */,
 				5AB83D1A27EB9F7C00F25250 /* Products */,
 			);
@@ -53,7 +62,9 @@
 		5AB83D1B27EB9F7C00F25250 /* UkraineData */ = {
 			isa = PBXGroup;
 			children = (
-				5AB83D2A27EB9FC800F25250 /* network */,
+				5AEFC348285B4A8900EA22A3 /* Info.plist */,
+				5AEFC345285B364D00EA22A3 /* Extensions */,
+				5AB83D2A27EB9FC800F25250 /* Network */,
 				5AB83D1C27EB9F7C00F25250 /* UkraineDataApp.swift */,
 				5AB83D1E27EB9F7C00F25250 /* ContentView.swift */,
 				5AB83D2027EB9F7D00F25250 /* Assets.xcassets */,
@@ -70,12 +81,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		5AB83D2A27EB9FC800F25250 /* network */ = {
+		5AB83D2A27EB9FC800F25250 /* Network */ = {
 			isa = PBXGroup;
 			children = (
 				5AB83D2B27EB9FE700F25250 /* UaDataAPI.swift */,
+				5AEFC33D285B2E0500EA22A3 /* Data.swift */,
 			);
-			path = network;
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5AEFC345285B364D00EA22A3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5AEFC346285B365D00EA22A3 /* String.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,6 +140,7 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
 			);
 			mainGroup = 5AB83D1027EB9F7C00F25250;
 			productRefGroup = 5AB83D1A27EB9F7C00F25250 /* Products */;
@@ -137,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AB83D2427EB9F7D00F25250 /* Preview Assets.xcassets in Resources */,
+				5AEFC341285B32FC00EA22A3 /* Localizable.strings in Resources */,
 				5AB83D2127EB9F7D00F25250 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -150,17 +172,32 @@
 			files = (
 				5AB83D1F27EB9F7C00F25250 /* ContentView.swift in Sources */,
 				5AB83D1D27EB9F7C00F25250 /* UkraineDataApp.swift in Sources */,
+				5AEFC347285B365D00EA22A3 /* String.swift in Sources */,
 				5AB83D2C27EB9FE700F25250 /* UaDataAPI.swift in Sources */,
+				5AEFC33E285B2E0500EA22A3 /* Data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5AEFC343285B32FC00EA22A3 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AEFC342285B32FC00EA22A3 /* en */,
+				5AEFC344285B332300EA22A3 /* uk */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		5AB83D2527EB9F7D00F25250 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -222,6 +259,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -284,9 +322,10 @@
 				DEVELOPMENT_TEAM = 534C989ZLQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = UkraineData/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -298,7 +337,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -313,9 +352,10 @@
 				DEVELOPMENT_TEAM = 534C989ZLQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = UkraineData/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -327,7 +367,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

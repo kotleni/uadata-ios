@@ -4,7 +4,9 @@ import SwiftUI
 struct UkraineDataApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                ContentView()
+            }
         }
     }
 }

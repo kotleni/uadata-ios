@@ -1,65 +1,170 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var peoplesCount: Int = 0
-    @State private var bbmCount: Int = 0
-    @State private var planesCount: Int = 0
-    @State private var tanksCount: Int = 0
-    @State private var artileryCount: Int = 0
-    @State private var rszvCount: Int = 0
-    @State private var ppoCount: Int = 0
-    @State private var helicoptersCount: Int = 0
-    @State private var autoCount: Int = 0
-    @State private var shipsCount: Int = 0
-    @State private var pmmCount: Int = 0
-    @State private var bplaCount: Int = 0
+    @State var selection: Int = 0
     
     var body: some View {
-        VStack {
-            Text("🇺🇦")
-                .font(.system(size: 42.0))
-                .padding()
-            
-            Form {
-                Section(content: {
-                    Text("Особовий склад: \(peoplesCount)")
-                    Text("ББМ: \(bbmCount)")
-                    Text("Танки: \(tanksCount)")
-                    Text("Артилерійські системи: \(artileryCount)")
-                    Text("РСЗВ: \(rszvCount)")
-                    Text("ППО: \(ppoCount)")
-                    Text("Автомобільна техніка: \(autoCount)")
-                    Text("Цистерни ПММ: \(pmmCount)")
-                }, header: { Text("Наземнi") })
-                
-                Section(content: {
-                    Text("Літаки: \(planesCount)")
-                    Text("Гелікоптери: \(helicoptersCount)")
-                    Text("БПЛА: \(bplaCount)")
-                }, header: { Text("Повітряні") })
-                
-                Section(content: {
-                    Text("Кораблі: \(shipsCount)")
-                }, header: { Text("Наводний") })
-            }
+        TabView(selection: $selection) {
+            StatView()
+                .tag(0)
+                .tabItem {
+                    Label("tab_stat".localized, systemImage: "doc.plaintext")
+                }
+            AboutView()
+                .tag(1)
+                .tabItem {
+                    Label("tab_about".localized, systemImage: "info.circle")
+                }
         }
-            .onAppear(perform: onStart)
-    }
-    
-    private func onStart() {
-        UaDataAPI.getPeoples { count in peoplesCount = count }
-        UaDataAPI.getBBM { count in bbmCount = count }
-        UaDataAPI.getPlanes { count in planesCount = count }
-        UaDataAPI.getTanks { count in tanksCount = count }
-        UaDataAPI.getArtilery { count in artileryCount = count }
-        UaDataAPI.getRSZV { count in rszvCount = count }
-        UaDataAPI.getPPO { count in ppoCount = count }
-        UaDataAPI.getHelicopters { count in helicoptersCount = count }
-        UaDataAPI.getAuto { count in autoCount = count }
-        UaDataAPI.getShips { count in shipsCount = count }
-        UaDataAPI.getPMM { count in pmmCount = count }
-        UaDataAPI.getBPLA { count in bplaCount = count }
+        .navigationTitle(Text(selection == 0 ? "title_stat".localized : "title_about".localized))
     }
 }
 
+struct AboutView: View {
+    var body: some View {
+        VStack {
+            Form {
+                Section {
+                    Button {
+                        openLink(url: "https://github.com/kotleni/uadata-ios")
+                    } label: {
+                        Text("link_github".localized)
+                    }
+                    .foregroundColor(Color.black)
 
+                    Button {
+                        openLink(url: "https://uadata.net/api")
+                    } label: {
+                        Text("link_uadata".localized)
+                    }
+                    .foregroundColor(Color.black)
+
+                } header: {
+                    Text("header_links")
+                }
+                
+                Section {
+                    Text("about_version")
+                        .foregroundColor(Color("TipColor"))
+                    Text("about_developer")
+                        .foregroundColor(Color("TipColor"))
+                } header: {
+                    Text("header_desc")
+                }
+            }
+        }
+    }
+    
+    private func openLink(url: String) {
+        guard let url = URL(string: url) else { return }
+        UIApplication.shared.open(url)
+    }
+}
+
+struct StatView: View {
+    private let groundItems = [
+        "people", "bbm", "tanks", "artilery", "rszv", "ppo", "auto"
+    ]
+    
+    private let airItems = [
+        "planes", "helicopters", "bpla"
+    ]
+    
+    private let waterItems = [
+        "ships"
+    ]
+    
+    @State private var dataGroundDict: Dictionary<String, Data> = Dictionary()
+    @State private var dataAirDict: Dictionary<String, Data> = Dictionary()
+    @State private var dataWaterDict: Dictionary<String, Data> = Dictionary()
+    
+    var body: some View {
+        Form {
+            Section(content: {
+                ForEach(dataGroundDict.keys.sorted(), id: \.self) { key in
+                    Text("\(Text("item_\(key)".localized)): \(dataGroundDict[key]!.value)")
+                        .contextMenu {
+                            Button {
+                                openLink(url: dataGroundDict[key]!.refUrl)
+                            } label: {
+                                Text("btn_ref".localized)
+                            }
+                            Button {
+                                openLink(url: dataGroundDict[key]!.url)
+                            } label: {
+                                Text("btn_uadata")
+                            }
+                        }
+                }
+            }, header: {
+                Text("type_ground".localized)
+            })
+            
+            Section(content: {
+                ForEach(dataAirDict.keys.sorted(), id: \.self) { key in
+                    Text("\(Text("item_\(key)".localized)): \(dataAirDict[key]!.value)")
+                        .contextMenu {
+                            Button {
+                                openLink(url: dataAirDict[key]!.refUrl)
+                            } label: {
+                                Text("btn_ref".localized)
+                            }
+                            Button {
+                                openLink(url: dataAirDict[key]!.url)
+                            } label: {
+                                Text("btn_uadata".localized)
+                            }
+                        }
+                }
+            }, header: {
+                Text("type_air".localized)
+            })
+            
+            Section(content: {
+                ForEach(dataWaterDict.keys.sorted(), id: \.self) { key in
+                    Text("\(Text("item_\(key)".localized)): \(dataWaterDict[key]!.value)")
+                        .contextMenu {
+                            Button {
+                                openLink(url: dataAirDict[key]!.refUrl)
+                            } label: {
+                                Text("btn_ref".localized)
+                            }
+                            Button {
+                                openLink(url: dataAirDict[key]!.url)
+                            } label: {
+                                Text("btn_uadata".localized)
+                            }
+                        }
+                }
+            }, header: {
+                Text("type_water".localized)
+            })
+        }
+        .onAppear {
+            loadData()
+        }
+    }
+    
+    private func openLink(url: String) {
+        guard let url = URL(string: url) else { return }
+        UIApplication.shared.open(url)
+    }
+    
+    private func loadData() {
+        groundItems.forEach { key in
+            UaDataAPI.getData(file: key) { data in
+                dataGroundDict[key] = data
+            }
+        }
+        airItems.forEach { key in
+            UaDataAPI.getData(file: key) { data in
+                dataAirDict[key] = data
+            }
+        }
+        waterItems.forEach { key in
+            UaDataAPI.getData(file: key) { data in
+                dataWaterDict[key] = data
+            }
+        }
+    }
+}
