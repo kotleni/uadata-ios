@@ -30,14 +30,14 @@ struct AboutView: View {
                     } label: {
                         Text("link_github".localized)
                     }
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color("LinkColor"))
 
                     Button {
                         openLink(url: "https://uadata.net/api")
                     } label: {
                         Text("link_uadata".localized)
                     }
-                    .foregroundColor(Color.black)
+                    .foregroundColor(Color("LinkColor"))
 
                 } header: {
                     Text("header_links")
