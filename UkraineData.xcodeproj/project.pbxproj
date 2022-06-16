@@ -15,6 +15,7 @@
 		5AEFC33E285B2E0500EA22A3 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFC33D285B2E0500EA22A3 /* Data.swift */; };
 		5AEFC341285B32FC00EA22A3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5AEFC343285B32FC00EA22A3 /* Localizable.strings */; };
 		5AEFC347285B365D00EA22A3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEFC346285B365D00EA22A3 /* String.swift */; };
+		5AF46E0B285BB64E003856C5 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AF46E0A285BB64E003856C5 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		5AEFC344285B332300EA22A3 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		5AEFC346285B365D00EA22A3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		5AEFC348285B4A8900EA22A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5AF46E0A285BB64E003856C5 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,8 @@
 		5AB83D1B27EB9F7C00F25250 /* UkraineData */ = {
 			isa = PBXGroup;
 			children = (
+				5AF46E09285BB645003856C5 /* Views */,
+				5AF46E08285BB63B003856C5 /* UI */,
 				5AEFC348285B4A8900EA22A3 /* Info.plist */,
 				5AEFC345285B364D00EA22A3 /* Extensions */,
 				5AB83D2A27EB9FC800F25250 /* Network */,
@@ -96,6 +100,21 @@
 				5AEFC346285B365D00EA22A3 /* String.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5AF46E08285BB63B003856C5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		5AF46E09285BB645003856C5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5AF46E0A285BB64E003856C5 /* WebView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +192,7 @@
 				5AB83D1F27EB9F7C00F25250 /* ContentView.swift in Sources */,
 				5AB83D1D27EB9F7C00F25250 /* UkraineDataApp.swift in Sources */,
 				5AEFC347285B365D00EA22A3 /* String.swift in Sources */,
+				5AF46E0B285BB64E003856C5 /* WebView.swift in Sources */,
 				5AB83D2C27EB9FE700F25250 /* UaDataAPI.swift in Sources */,
 				5AEFC33E285B2E0500EA22A3 /* Data.swift in Sources */,
 			);

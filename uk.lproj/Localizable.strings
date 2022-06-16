@@ -30,10 +30,12 @@
 
 // tabs
 "tab_stat" = "Статистика";
+"tab_map" = "Мапа";
 "tab_about" = "Про додаток";
 
 // title
 "title_stat" = "Статистика";
+"title_map" = "Мапа";
 "title_about" = "Про додаток";
 
 // header
@@ -43,6 +45,7 @@
 // link
 "link_github" = "Github";
 "link_uadata" = "API";
+"link_wiki" = "Вікіпедія";
 
 // desc
 "about_version" = "Версія додатку: 1.0";

@@ -30,10 +30,12 @@
 
 // tabs
 "tab_stat" = "Statistics";
+"tab_map" = "Map";
 "tab_about" = "About";
 
 // title
 "title_stat" = "Statistics";
+"title_map" = "Map";
 "title_about" = "About";
 
 // header
@@ -43,6 +45,7 @@
 // link
 "link_github" = "Github";
 "link_uadata" = "API";
+"link_wiki" = "Wikipedia";
 
 // desc
 "about_version" = "App version: 1.0";

@@ -10,13 +10,34 @@ struct ContentView: View {
                 .tabItem {
                     Label("tab_stat".localized, systemImage: "doc.plaintext")
                 }
-            AboutView()
+            MapView()
                 .tag(1)
+                .tabItem {
+                    Label("tab_map".localized, systemImage: "map")
+                        .contextMenu {
+                            
+                        }
+                }
+            AboutView()
+                .tag(2)
                 .tabItem {
                     Label("tab_about".localized, systemImage: "info.circle")
                 }
+            
         }
-        .navigationTitle(Text(selection == 0 ? "title_stat".localized : "title_about".localized))
+        .navigationTitle(Text(selection == 0 ? "title_stat".localized : selection == 1 ? "title_map".localized : "title_about".localized))
+    }
+    
+}
+
+struct MapView: View {
+    var body: some View {
+        WebView(url: "https://upload.wikimedia.org/wikipedia/commons/4/4f/2022_Russian_invasion_of_Ukraine.svg")
+    }
+    
+    private func openLink(url: String) {
+        guard let url = URL(string: url) else { return }
+        UIApplication.shared.open(url)
     }
 }
 
@@ -36,6 +57,13 @@ struct AboutView: View {
                         openLink(url: "https://uadata.net/api")
                     } label: {
                         Text("link_uadata".localized)
+                    }
+                    .foregroundColor(Color("LinkColor"))
+                    
+                    Button {
+                        openLink(url: "https://uk.wikipedia.org/wiki/Російське_вторгнення_в_Україну_(2022)")
+                    } label: {
+                        Text("link_wiki".localized)
                     }
                     .foregroundColor(Color("LinkColor"))
 
