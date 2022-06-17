@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A4001A7285C7C9B005B5BFA /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4001A6285C7C9B005B5BFA /* MapView.swift */; };
+		5A4001A9285C7CB3005B5BFA /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4001A8285C7CB3005B5BFA /* AboutView.swift */; };
+		5A4001AB285C7CD3005B5BFA /* StatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A4001AA285C7CD3005B5BFA /* StatView.swift */; };
 		5AB83D1D27EB9F7C00F25250 /* UkraineDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB83D1C27EB9F7C00F25250 /* UkraineDataApp.swift */; };
 		5AB83D1F27EB9F7C00F25250 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AB83D1E27EB9F7C00F25250 /* ContentView.swift */; };
 		5AB83D2127EB9F7D00F25250 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AB83D2027EB9F7D00F25250 /* Assets.xcassets */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A4001A6285C7C9B005B5BFA /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		5A4001A8285C7CB3005B5BFA /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		5A4001AA285C7CD3005B5BFA /* StatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatView.swift; sourceTree = "<group>"; };
 		5AB83D1927EB9F7C00F25250 /* UkraineData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UkraineData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AB83D1C27EB9F7C00F25250 /* UkraineDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UkraineDataApp.swift; sourceTree = "<group>"; };
 		5AB83D1E27EB9F7C00F25250 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,7 +76,6 @@
 				5AEFC345285B364D00EA22A3 /* Extensions */,
 				5AB83D2A27EB9FC800F25250 /* Network */,
 				5AB83D1C27EB9F7C00F25250 /* UkraineDataApp.swift */,
-				5AB83D1E27EB9F7C00F25250 /* ContentView.swift */,
 				5AB83D2027EB9F7D00F25250 /* Assets.xcassets */,
 				5AB83D2227EB9F7D00F25250 /* Preview Content */,
 			);
@@ -105,6 +110,10 @@
 		5AF46E08285BB63B003856C5 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5AB83D1E27EB9F7C00F25250 /* ContentView.swift */,
+				5A4001A6285C7C9B005B5BFA /* MapView.swift */,
+				5A4001A8285C7CB3005B5BFA /* AboutView.swift */,
+				5A4001AA285C7CD3005B5BFA /* StatView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -189,7 +198,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A4001A9285C7CB3005B5BFA /* AboutView.swift in Sources */,
+				5A4001A7285C7C9B005B5BFA /* MapView.swift in Sources */,
 				5AB83D1F27EB9F7C00F25250 /* ContentView.swift in Sources */,
+				5A4001AB285C7CD3005B5BFA /* StatView.swift in Sources */,
 				5AB83D1D27EB9F7C00F25250 /* UkraineDataApp.swift in Sources */,
 				5AEFC347285B365D00EA22A3 /* String.swift in Sources */,
 				5AF46E0B285BB64E003856C5 /* WebView.swift in Sources */,
