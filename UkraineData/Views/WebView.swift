@@ -26,7 +26,6 @@ struct WebView: UIViewRepresentable {
         webView.allowsBackForwardNavigationGestures = false
         webView.scrollView.isScrollEnabled = true
         webView.scrollView.isDirectionalLockEnabled = false
-        webView.allowsLinkPreview = false
         webView.backgroundColor = .clear
         webView.isOpaque = false
         return webView
