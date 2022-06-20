@@ -13,4 +13,4 @@ extension String {
     }
 }
 
-private class BundleClass {}
+private class BundleClass { }

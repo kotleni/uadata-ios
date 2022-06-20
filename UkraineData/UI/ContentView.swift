@@ -14,9 +14,6 @@ struct ContentView: View {
                 .tag(1)
                 .tabItem {
                     Label("tab_map".localized, systemImage: "map")
-                        .contextMenu {
-                            
-                        }
                 }
             AboutView()
                 .tag(2)
@@ -27,5 +24,5 @@ struct ContentView: View {
         }
         .navigationTitle(Text(selection == 0 ? "title_stat".localized : selection == 1 ? "title_map".localized : "title_about".localized))
     }
-    
+
 }
